@@ -16,7 +16,19 @@ namespace Business.Concrete
         {
             _appointmentDal = appointmentDal;
         }
- 
+
+        public IResult Add(Appointment appointment)
+        {
+            _appointmentDal.Add(appointment);
+            return new SuccessResult("Randevu Eklendi");
+        }
+
+        public IResult Delete(Appointment appointment)
+        {
+            _appointmentDal.Add(appointment);
+            return new SuccessResult("Randevu Silindi");
+        }
+
         public IDataResult<List<Appointment>> GetAll()
         {
             return new SuccessDataResult<List<Appointment>>(_appointmentDal.GetAll(), "Randevular Listelendi");
@@ -29,6 +41,17 @@ namespace Business.Concrete
         public IDataResult<Appointment> GetById(int appointmentId)
         {
             return new SuccessDataResult<Appointment>(_appointmentDal.Get(a => a.AppointmentId == appointmentId));
+        }
+
+        public IResult GetCount ()
+        {
+            return new SuccessDataResult<int>(_appointmentDal.GetAll().Count);
+        }
+
+        public IResult Update(Appointment appointment)
+        {
+            _appointmentDal.Update(appointment);
+            return new SuccessResult("Randevu Güncellendi"); ;
         }
     }
 }

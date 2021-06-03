@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace DataAccess.Concrete.Entityframework
 {
-    public class EfAppointment : EfEntityRepositoryBase<Appointment, HospitalContext>, IAppointmentDal
+    public class EfAppointmentDal : EfEntityRepositoryBase<Appointment, HospitalContext>, IAppointmentDal
     {
         public List<AppointmentDetailDto> GetAppointmentDetails()
         {
