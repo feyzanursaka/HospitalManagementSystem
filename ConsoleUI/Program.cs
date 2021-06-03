@@ -8,32 +8,36 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            //DoctorTest();
-            //PatientTest();
+            DoctorTest();
             AppointmentDetailDtoTest();
 
         }
         private static void AppointmentDetailDtoTest()
         {
             AppointmentManager appointmentManager = new AppointmentManager(new EfAppointment());
-            foreach (var appointment in appointmentManager.GetAppointmentDetails())
+
+            var result = appointmentManager.GetAppointmentDetails();
+
+            if (result.Success == true)
             {
-                Console.WriteLine(appointment.DoctorName+" "+ appointment.PatientName+" "+appointment.AppointmentDate);
+                foreach (var appointment in result.Data)
+                {
+                    Console.WriteLine(appointment.DoctorName + " " + appointment.PatientName + " " + appointment.AppointmentDate);
+                }
             }
-        }
-        private static void PatientTest()
-        {
-            PatientManager patientManager = new PatientManager(new EfPatientDal());
-            foreach (var patient in patientManager.GetById(1))
+            else
             {
-                Console.WriteLine(patient.FirstName);
+                Console.WriteLine(result.Message);
             }
+
+           
         }
+     
 
         private static void DoctorTest()
         {
             DoctorManager doctorManager = new DoctorManager(new EfDoctorDal());
-            foreach (var doctor in doctorManager.GetAll())
+            foreach (var doctor in doctorManager.GetAll().Data)
             {
                 Console.WriteLine(doctor.FirstName);
             }

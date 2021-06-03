@@ -1,4 +1,5 @@
-﻿using Entities.Concrete;
+﻿using Core.Utilities.Results;
+using Entities.Concrete;
 using Entities.DTOs;
 using System;
 using System.Collections.Generic;
@@ -8,8 +9,8 @@ namespace Business.Abstract
 {
     public interface IAppointmentService
     {
-        List<Appointment> GetAll();
-        List<Appointment> GetById(int appointmentId);
-        List<AppointmentDetailDto> GetAppointmentDetails();
+        IDataResult<List<Appointment>> GetAll();
+        IDataResult<Appointment> GetById(int appointmentId);
+        IDataResult<List<AppointmentDetailDto>> GetAppointmentDetails();
     }
 }

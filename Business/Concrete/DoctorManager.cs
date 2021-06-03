@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -14,9 +15,21 @@ namespace Business.Concrete
         {
             _doctorDal=doctorDal;
         }
-        public List<Doctor> GetAll()
+
+        public IResult Add(Doctor doctor)
         {
-            return _doctorDal.GetAll();
+            _doctorDal.Add(doctor);
+            return new SuccessResult("Doktor Eklendi");
+        }
+
+        public IDataResult<List<Doctor>> GetAll()
+        {
+            return new SuccessDataResult<List<Doctor>>(_doctorDal.GetAll(), "Doktorlar Listelendi");
+        }
+
+        public IDataResult<Doctor> GetById(int doctorId)
+        {
+            return new SuccessDataResult<Doctor>(_doctorDal.Get(d => d.DoctorId == doctorId));
         }
     }
 }

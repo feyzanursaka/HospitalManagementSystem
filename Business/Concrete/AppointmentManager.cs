@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
@@ -15,19 +16,19 @@ namespace Business.Concrete
         {
             _appointmentDal = appointmentDal;
         }
-        public List<Appointment> GetAll()
+ 
+        public IDataResult<List<Appointment>> GetAll()
         {
-            return _appointmentDal.GetAll();
+            return new SuccessDataResult<List<Appointment>>(_appointmentDal.GetAll(), "Randevular Listelendi");
+        }
+        public IDataResult<List<AppointmentDetailDto>> GetAppointmentDetails()
+        {
+            return new SuccessDataResult<List<AppointmentDetailDto>>(_appointmentDal.GetAppointmentDetails(), "Randevu Detayları Listelendi");
         }
 
-        public List<AppointmentDetailDto> GetAppointmentDetails()
+        public IDataResult<Appointment> GetById(int appointmentId)
         {
-            return _appointmentDal.GetAppointmentDetails();
-        }
-
-        public List<Appointment> GetById(int appointmentId)
-        {
-            return _appointmentDal.GetAll(a => a.AppointmentId == appointmentId);
+            return new SuccessDataResult<Appointment>(_appointmentDal.Get(a => a.AppointmentId == appointmentId));
         }
     }
 }
