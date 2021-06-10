@@ -29,11 +29,6 @@ Doctor silme işlemi Patiente bağlı olduğu için gerçekleştirilmemiştir
     <ul>
       <li>Instance üretimini sağlayan yapıdır.</li> 
     </ul> 
- <li>FluentValidation</li> 
-    <ul>
-      <li>Eklemek istediğin varlığı, iş kurallarına dahil etmek için bu nesnenin yapısal olarak uygun olup olmadığını kontrol etmeye yarar.</li> 
-      <li>Mesela sisteme kayıt olurken min şu kadar karakter olmalı, şifre şuna uymalı gibi kurallar yani yapısal uyuma doğrulama denir.</li>
-    </ul> 
  <li>MsSql</li> 
  <li><a href="https://github.com/feyzanursaka/HospitalManagement-frontend">Angular for Frontend</a></li> 
 </ul>
