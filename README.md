@@ -50,9 +50,9 @@ Doctor silme işlemi Patiente bağlı olduğu için gerçekleştirilmemiştir
       <li>Tüm bellekte bir tane DoctorManager oluşturulur. Birden fazla client gelsede hepsine aynı instance referansını verir.</li>
     </ul> 
 </ul>
-# Katmanlar
 
-<p>Proje, farklı katmanlar oluşturularak Plug and Play (Tak ve Çalıştır) Sistemler şeklinde yazıldı.
+# Katmanlar
+<p>Proje, farklı katmanlar oluşturularak Plug and Play (Tak ve Çalıştır) Sistemler şeklinde yazıldı.</p>
 <h3>1.Business</h3>
 <h3>2.Core</h3>
 <h3>3.Data Access</h3>
