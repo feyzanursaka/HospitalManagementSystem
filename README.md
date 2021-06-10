@@ -33,24 +33,6 @@ Doctor silme işlemi Patiente bağlı olduğu için gerçekleştirilmemiştir
  <li><a href="https://github.com/feyzanursaka/HospitalManagement-frontend">Angular for Frontend</a></li> 
 </ul>
 
-# Kullanılan Teknikler  
-<ul style="list-style-type:disc">
- <li>Layered Architecture Design Pattern</li>
- <li>AOP</li>
-    <ul>
-      <li>Bir metodun önünde, sonunda veya hata verdiğinde çalışan kod parçacığı AOP mimarisi ile yazılır.</li> 
-      <li>Autofac AOP imkanı sunuyor.</li>
-      <li>Bu sayede .NET'in IoC Container'ına Autofac enjekte edilir.</li>
-    </ul> 
- <li>IOC (Inversion of control)</li> 
-    <ul>
-      <li>Değişimin Kontrolü</li> 
-      <li>Hiçbir katman diğerini newlemez, bu işlemi IoC yapar.</li>
-      <li>Mesela CarController'ın ICarService'e ihtiyacı varsa, ASP.NET, Web API IoC Container'a bakar karşılık geleni kullanır.</li>
-      <li>Tüm bellekte bir tane DoctorManager oluşturulur. Birden fazla client gelsede hepsine aynı instance referansını verir.</li>
-    </ul> 
-</ul>
-
 # Katmanlar
 <p>Proje, farklı katmanlar oluşturularak Plug and Play (Tak ve Çalıştır) Sistemler şeklinde yazıldı.</p>
 <h3>1.Business</h3>
