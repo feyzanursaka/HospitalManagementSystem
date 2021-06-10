@@ -35,7 +35,7 @@ Doctor silme işlemi Patiente bağlı olduğu için gerçekleştirilmemiştir
       <li>Mesela sisteme kayıt olurken min şu kadar karakter olmalı, şifre şuna uymalı gibi kurallar yani yapısal uyuma doğrulama denir.</li>
     </ul> 
  <li>MsSql</li> 
- <li><a href="https://github.com/feyzanursaka/ReCapProject-frontend">Angular for Frontend</a></li> 
+ <li><a href="https://github.com/feyzanursaka/HospitalManagement-frontend">Angular for Frontend</a></li> 
 </ul>
 
 # Kullanılan Teknikler  
